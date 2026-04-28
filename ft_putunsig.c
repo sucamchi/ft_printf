@@ -6,7 +6,7 @@
 /*   By: scamlett <scamlett@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/28 10:37:02 by scamlett          #+#    #+#             */
-/*   Updated: 2026/04/28 20:15:47 by scamlett         ###   ########.fr       */
+/*   Updated: 2026/04/28 20:45:45 by scamlett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,12 @@
 void	ft_putunsig(unsigned int nb, int *printed)
 {
 	int	result;
+	unsigned long lnb;
 
-	if (nb == 4294967295)
-	{
-		write(1, "4294967295", 10);
-		*printed += 10;
-		return ;
-	}
-	if (nb >= 10)
-		ft_putunsig(nb / 10, printed);
-	result = (nb % 10) + '0';
+	lnb = nb;
+	if (lnb >= 10)
+		ft_putunsig(lnb / 10, printed);
+	result = (lnb % 10) + '0';
 	write(1, &result, 1);
 	(*printed)++;
 }
