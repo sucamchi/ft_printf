@@ -6,7 +6,7 @@
 /*   By: scamlett <scamlett@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/28 10:37:02 by scamlett          #+#    #+#             */
-/*   Updated: 2026/04/28 20:45:45 by scamlett         ###   ########.fr       */
+/*   Updated: 2026/04/28 20:47:35 by scamlett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	ft_putunsig(unsigned int nb, int *printed)
 {
-	int	result;
-	unsigned long lnb;
+	int				result;
+	unsigned long	lnb;
 
 	lnb = nb;
 	if (lnb >= 10)
