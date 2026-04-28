@@ -12,8 +12,7 @@ SRCS =	ft_printf.c \
 		printf_putstr.c \
 		printf_putvoid.c \
 		printf_putunsig.c \
-		printf_puthex.c \
-		printf_putupphex.c
+		printf_puthex.c
 		
 OBJS = $(SRCS:.c=.o)
 

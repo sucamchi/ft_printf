@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printf_puthex.c                                    :+:      :+:    :+:   */
+/*   ft_puthex.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: scamlett <scamlett@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/28 10:36:45 by scamlett          #+#    #+#             */
-/*   Updated: 2026/04/28 20:02:38 by scamlett         ###   ########.fr       */
+/*   Updated: 2026/04/28 20:10:00 by scamlett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,10 @@ static void	turn_result(char *buffer, int count)
 	}
 }
 
-static void	hex_converter(char *buffer, unsigned int nb)
+static void	hex_converter(char *buffer, unsigned int nb, char *hex_digits)
 {
-	char	*hex_digits;
-	int		count;
+	int	count;
 
-	hex_digits = "0123456789abcdef";
 	count = 0;
 	if (nb == 0)
 		buffer[count++] = '0';
@@ -52,6 +50,14 @@ void	printf_puthex(unsigned int nb, int *printed)
 {
 	char	buffer[16];
 
-	hex_converter(buffer, nb);
+	hex_converter(buffer, nb, "0123456789abcdef");
+	printf_putstr(buffer, printed);
+}
+
+void	printf_putupphex(unsigned int nb, int *printed)
+{
+	char	buffer[16];
+
+	hex_converter(buffer, nb, "0123456789ABCDEF");
 	printf_putstr(buffer, printed);
 }
