@@ -6,7 +6,7 @@
 /*   By: scamlett <scamlett@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/28 10:35:26 by scamlett          #+#    #+#             */
-/*   Updated: 2026/04/28 20:01:34 by scamlett         ###   ########.fr       */
+/*   Updated: 2026/04/28 20:15:03 by scamlett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,12 @@
 # include <unistd.h>
 
 int		ft_printf(char const *fmt, ...);
-void	printf_putchar(char c, int *printed);
-void	printf_putnbr(int nb, int *printed);
-void	printf_putstr(char *str, int *printed);
-void	printf_putvoid(void *ptr, int *printed);
-void	printf_putunsig(unsigned int nb, int *printed);
-void	printf_puthex(unsigned int nb, int *printed);
-void	printf_putupphex(unsigned int nb, int *printed);
+void	ft_putchar(char c, int *printed);
+void	ft_putnbr(int nb, int *printed);
+void	ft_putstr(char *str, int *printed);
+void	ft_putvoid(void *ptr, int *printed);
+void	ft_putunsig(unsigned int nb, int *printed);
+void	ft_puthex(unsigned int nb, int *printed);
+void	ft_putupphex(unsigned int nb, int *printed);
 
 #endif

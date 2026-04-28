@@ -7,12 +7,12 @@ AR = ar
 ARFLAGS = rcs
 
 SRCS =	ft_printf.c \
-		printf_putchar.c \
-		printf_putnbr.c \
-		printf_putstr.c \
-		printf_putvoid.c \
-		printf_putunsig.c \
-		printf_puthex.c
+		ft_putchar.c \
+		ft_putnbr.c \
+		ft_putstr.c \
+		ft_putvoid.c \
+		ft_putunsig.c \
+		ft_puthex.c
 		
 OBJS = $(SRCS:.c=.o)
 

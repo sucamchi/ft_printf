@@ -6,7 +6,7 @@
 /*   By: scamlett <scamlett@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/28 10:36:45 by scamlett          #+#    #+#             */
-/*   Updated: 2026/04/28 20:10:00 by scamlett         ###   ########.fr       */
+/*   Updated: 2026/04/28 20:17:21 by scamlett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,18 +46,20 @@ static void	hex_converter(char *buffer, unsigned int nb, char *hex_digits)
 	turn_result(buffer, count);
 }
 
-void	printf_puthex(unsigned int nb, int *printed)
+void	ft_puthex(unsigned int nb, int *printed)
 {
 	char	buffer[16];
 
 	hex_converter(buffer, nb, "0123456789abcdef");
-	printf_putstr(buffer, printed);
+	ft_putstr(buffer, printed);
+	ft_putstr(buffer, printed);
 }
 
-void	printf_putupphex(unsigned int nb, int *printed)
+void	ft_putupphex(unsigned int nb, int *printed)
 {
 	char	buffer[16];
 
 	hex_converter(buffer, nb, "0123456789ABCDEF");
-	printf_putstr(buffer, printed);
+	ft_putstr(buffer, printed);
+	ft_putstr(buffer, printed);
 }

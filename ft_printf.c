@@ -6,7 +6,7 @@
 /*   By: scamlett <scamlett@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/28 10:35:37 by scamlett          #+#    #+#             */
-/*   Updated: 2026/04/28 20:01:04 by scamlett         ###   ########.fr       */
+/*   Updated: 2026/04/28 20:14:20 by scamlett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,21 +15,21 @@
 static void	select_type(char s, va_list args, int *printed)
 {
 	if (s == 'c')
-		printf_putchar((char)va_arg(args, int), printed);
+		ft_putchar((char)va_arg(args, int), printed);
 	else if (s == 's')
-		printf_putstr(va_arg(args, char *), printed);
+		ft_putstr(va_arg(args, char *), printed);
 	else if (s == 'p')
-		printf_putvoid(va_arg(args, void *), printed);
+		ft_putvoid(va_arg(args, void *), printed);
 	else if (s == 'i' || s == 'd')
-		printf_putnbr(va_arg(args, int), printed);
+		ft_putnbr(va_arg(args, int), printed);
 	else if (s == 'u')
-		printf_putunsig(va_arg(args, unsigned int), printed);
+		ft_putunsig(va_arg(args, unsigned int), printed);
 	else if (s == 'x')
-		printf_puthex(va_arg(args, unsigned int), printed);
+		ft_puthex(va_arg(args, unsigned int), printed);
 	else if (s == 'X')
-		printf_putupphex(va_arg(args, unsigned int), printed);
+		ft_putupphex(va_arg(args, unsigned int), printed);
 	else if (s == '%')
-		printf_putchar('%', printed);
+		ft_putchar('%', printed);
 }
 
 int	ft_printf(char const *fmt, ...)
@@ -49,7 +49,7 @@ int	ft_printf(char const *fmt, ...)
 			select_type(fmt[cont], args, &printed);
 		}
 		else
-			printf_putchar(fmt[cont], &printed);
+			ft_putchar(fmt[cont], &printed);
 		cont++;
 	}
 	va_end(args);

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printf_putvoid.c                                   :+:      :+:    :+:   */
+/*   ft_putvoid.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: scamlett <scamlett@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/28 10:37:12 by scamlett          #+#    #+#             */
-/*   Updated: 2026/04/28 20:04:42 by scamlett         ###   ########.fr       */
+/*   Updated: 2026/04/28 20:14:25 by scamlett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ static void	hex_converter(char *buffer, unsigned long ptr)
 	turn_result(buffer, count);
 }
 
-void	printf_putvoid(void *ptr, int *printed)
+void	ft_putvoid(void *ptr, int *printed)
 {
 	char	buffer[18];
 
@@ -62,6 +62,6 @@ void	printf_putvoid(void *ptr, int *printed)
 	else
 	{
 		hex_converter(buffer, (unsigned long)ptr);
-		printf_putstr(buffer, printed);
+		ft_putstr(buffer, printed);
 	}
 }

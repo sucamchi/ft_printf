@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printf_putstr.c                                    :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: scamlett <scamlett@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/28 10:36:57 by scamlett          #+#    #+#             */
-/*   Updated: 2026/04/28 10:36:58 by scamlett         ###   ########.fr       */
+/*   Updated: 2026/04/28 20:14:25 by scamlett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	printf_putstr(char *str, int *printed)
+void	ft_putstr(char *str, int *printed)
 {
 	unsigned int	count;
 
