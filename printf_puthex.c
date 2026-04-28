@@ -6,20 +6,20 @@
 /*   By: scamlett <scamlett@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/28 10:36:45 by scamlett          #+#    #+#             */
-/*   Updated: 2026/04/28 10:36:46 by scamlett         ###   ########.fr       */
+/*   Updated: 2026/04/28 20:02:38 by scamlett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static void	turn_result(char *buffer, int cont)
+static void	turn_result(char *buffer, int count)
 {
 	int		start;
 	int		end;
 	char	aux;
 
 	start = 0;
-	end = cont - 1;
+	end = count - 1;
 	while (start < end)
 	{
 		aux = buffer[start];
@@ -33,19 +33,19 @@ static void	turn_result(char *buffer, int cont)
 static void	hex_converter(char *buffer, unsigned int nb)
 {
 	char	*hex_digits;
-	int		cont;
+	int		count;
 
 	hex_digits = "0123456789abcdef";
-	cont = 0;
+	count = 0;
 	if (nb == 0)
-		buffer[cont++] = '0';
+		buffer[count++] = '0';
 	while (nb > 0)
 	{
-		buffer[cont++] = hex_digits[nb % 16];
+		buffer[count++] = hex_digits[nb % 16];
 		nb /= 16;
 	}
-	buffer[cont] = '\0';
-	turn_result(buffer, cont);
+	buffer[count] = '\0';
+	turn_result(buffer, count);
 }
 
 void	printf_puthex(unsigned int nb, int *printed)

@@ -6,7 +6,7 @@
 /*   By: scamlett <scamlett@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/28 10:35:37 by scamlett          #+#    #+#             */
-/*   Updated: 2026/04/28 10:35:39 by scamlett         ###   ########.fr       */
+/*   Updated: 2026/04/28 20:01:04 by scamlett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,24 +32,24 @@ static void	select_type(char s, va_list args, int *printed)
 		printf_putchar('%', printed);
 }
 
-int	ft_printf(char const *str, ...)
+int	ft_printf(char const *fmt, ...)
 {
 	va_list	args;
 	int		cont;
 	int		printed;
 
-	va_start(args, str);
+	va_start(args, fmt);
 	cont = 0;
 	printed = 0;
-	while (str[cont])
+	while (fmt[cont])
 	{
-		if (str[cont] == '%' && str[cont + 1] != '\0')
+		if (fmt[cont] == '%' && fmt[cont + 1] != '\0')
 		{
 			cont++;
-			select_type(str[cont], args, &printed);
+			select_type(fmt[cont], args, &printed);
 		}
 		else
-			printf_putchar(str[cont], &printed);
+			printf_putchar(fmt[cont], &printed);
 		cont++;
 	}
 	va_end(args);

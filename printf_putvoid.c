@@ -6,20 +6,20 @@
 /*   By: scamlett <scamlett@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/28 10:37:12 by scamlett          #+#    #+#             */
-/*   Updated: 2026/04/28 10:37:13 by scamlett         ###   ########.fr       */
+/*   Updated: 2026/04/28 20:04:42 by scamlett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static void	turn_result(char *buffer, int cont)
+static void	turn_result(char *buffer, int count)
 {
 	int		start;
 	int		end;
 	char	aux;
 
 	start = 2;
-	end = cont - 1;
+	end = count - 1;
 	while (start < end)
 	{
 		aux = buffer[start];
@@ -33,21 +33,21 @@ static void	turn_result(char *buffer, int cont)
 static void	hex_converter(char *buffer, unsigned long ptr)
 {
 	char	*hex_digits;
-	int		cont;
+	int		count;
 
 	hex_digits = "0123456789abcdef";
-	cont = 2;
+	count = 2;
 	if (ptr == 0)
-		buffer[cont++] = '0';
+		buffer[count++] = '0';
 	buffer[0] = '0';
 	buffer[1] = 'x';
 	while (ptr > 0)
 	{
-		buffer[cont++] = hex_digits[ptr % 16];
+		buffer[count++] = hex_digits[ptr % 16];
 		ptr /= 16;
 	}
-	buffer[cont] = '\0';
-	turn_result(buffer, cont);
+	buffer[count] = '\0';
+	turn_result(buffer, count);
 }
 
 void	printf_putvoid(void *ptr, int *printed)

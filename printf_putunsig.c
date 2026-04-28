@@ -6,7 +6,7 @@
 /*   By: scamlett <scamlett@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/28 10:37:02 by scamlett          #+#    #+#             */
-/*   Updated: 2026/04/28 10:37:02 by scamlett         ###   ########.fr       */
+/*   Updated: 2026/04/28 20:03:29 by scamlett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	printf_putunsig(unsigned int nb, int *printed)
 {
-	int	aux;
+	int	result;
 
 	if (nb == 4294967295)
 	{
@@ -24,7 +24,7 @@ void	printf_putunsig(unsigned int nb, int *printed)
 	}
 	if (nb >= 10)
 		printf_putunsig(nb / 10, printed);
-	aux = (nb % 10) + '0';
-	write(1, &aux, 1);
+	result = (nb % 10) + '0';
+	write(1, &result, 1);
 	(*printed)++;
 }
