@@ -6,7 +6,7 @@
 /*   By: scamlett <scamlett@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/28 10:35:26 by scamlett          #+#    #+#             */
-/*   Updated: 2026/04/28 10:36:07 by scamlett         ###   ########.fr       */
+/*   Updated: 2026/04/28 12:18:53 by scamlett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define FT_PRINTF_H
 
 # include <stdarg.h>
-# include <stdio.h>
 # include <unistd.h>
 
 int		ft_printf(char const *str, ...);
