@@ -6,7 +6,7 @@
 /*   By: scamlett <scamlett@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/28 10:36:45 by scamlett          #+#    #+#             */
-/*   Updated: 2026/04/28 20:17:21 by scamlett         ###   ########.fr       */
+/*   Updated: 2026/04/28 20:26:21 by scamlett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,6 @@ void	ft_puthex(unsigned int nb, int *printed)
 
 	hex_converter(buffer, nb, "0123456789abcdef");
 	ft_putstr(buffer, printed);
-	ft_putstr(buffer, printed);
 }
 
 void	ft_putupphex(unsigned int nb, int *printed)
@@ -60,6 +59,5 @@ void	ft_putupphex(unsigned int nb, int *printed)
 	char	buffer[16];
 
 	hex_converter(buffer, nb, "0123456789ABCDEF");
-	ft_putstr(buffer, printed);
 	ft_putstr(buffer, printed);
 }
