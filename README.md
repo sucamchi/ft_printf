@@ -18,16 +18,28 @@ make
 make fclean
 ```
 
-- Ejemplo:
+- Pruebas:
+
+1) Crea un archivo `main.c` con este contenido:
 
 ```c
 #include "ft_printf.h"
+#include <stdio.h>
 
-int main(void)
+int	main(void)
 {
-		ft_printf("Numero: %d, Hex: %x\n", 42, 42);
-		return (0);
+	ft_printf("Hello %s %d %x\n", "world", 42, 255);
+	printf("Hello %s %d %x\n", "world", 42, 255);
+	ft_printf("Hello %c %i %X %%\n", 'n', 21, 255);
+	printf("Hello %c %i %X %%\n", 'n', 21, 255);
+	return (0);
 }
+```
+
+2) Compila y ejecuta el test:
+
+```sh
+gcc *.c -o test && ./test
 ```
 
 ## Recursos
