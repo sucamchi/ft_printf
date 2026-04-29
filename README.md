@@ -61,7 +61,7 @@ procesa caracter a caracter y, cuando aparece un `%`, se interpreta el
 especificador siguiente y se delega la impresion a una funcion especializada.
 Este enfoque es rápido y sencillo.
 
-Para convertir numeros a texto se usa un algoritmo clasico de division sucesiva
+Para convertir numeros a texto se usa un algoritmo de division sucesiva
 en base 10 o base 16. El numero se descompone en digitos mediante modulo y
 division, y despues se imprime en el orden correcto mediante recursión.
 
