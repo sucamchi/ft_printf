@@ -39,7 +39,7 @@ int	main(void)
 2) Compila y ejecuta el test:
 
 ```sh
-gcc *.c -o test && ./test
+cc *.c -o test && ./test
 ```
 
 ## Recursos
