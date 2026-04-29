@@ -59,6 +59,4 @@ division, y despues se imprime en el orden correcto mediante recursión.
 - Un buffer local de tamano fijo para conversion hexadecimal.
 - `va_list` de `stdarg.h` para gestionar argumentos variables.
 
-La eleccion de este algoritmo es adecuada porque es simple, fiable y cumple los
-requisitos de la evaluacion. Evita estructuras complejas y mantiene el control
-total de la salida.
+Este algoritmo es adecuado porque es simple, fiable y cumple los requisitos de la evaluacion, evita estructuras complejas y mantiene el control total de la salida.
