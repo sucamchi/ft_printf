@@ -6,7 +6,7 @@
 /*   By: scamlett <scamlett@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/28 10:36:57 by scamlett          #+#    #+#             */
-/*   Updated: 2026/04/28 20:14:25 by scamlett         ###   ########.fr       */
+/*   Updated: 2026/04/29 11:03:13 by scamlett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,19 @@
 
 void	ft_putstr(char *str, int *printed)
 {
-	unsigned int	count;
+	unsigned int	i;
 
-	count = 0;
+	i = 0;
 	if (str == NULL)
 	{
 		write(1, "(null)", 6);
 		*printed += 6;
 		return ;
 	}
-	while (str[count] != '\0')
+	while (str[i] != '\0')
 	{
-		write(1, &str[count], 1);
-		count++;
+		write(1, &str[i], 1);
+		i++;
 		(*printed)++;
 	}
 }

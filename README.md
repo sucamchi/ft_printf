@@ -2,9 +2,7 @@ _Este proyecto ha sido creado como parte del currículo de 42 por scamlett._
 
 ## Descripción
 
-ft_printf es una reimplementación simplificada de la función `printf` de la
-biblioteca estándar de C. El objetivo principal es aprender el manejo de argumentos
-variables y el formateo de salida. El proyecto soporta los formatos básicos, como caracteres, cadenas, enteros con signo y sin signo, hexadecimal y punteros.
+ft_printf es una reimplementación simplificada de la función `printf` de C. El objetivo principal es aprender el manejo de argumentos variables y el formateo de salida. El proyecto soporta los formatos básicos, como caracteres, cadenas, enteros con signo y sin signo, hexadecimal y punteros.
 
 ## Instrucciones
 
@@ -51,7 +49,7 @@ procesa caracter a caracter y, cuando aparece un `%`, se interpreta el
 especificador siguiente y se delega la impresion a una funcion especializada.
 Este enfoque es rápido y sencillo.
 
-Para convertir numeros a texto se usa un algoritmo clasico de division recursiva
+Para convertir numeros a texto se usa un algoritmo clasico de division sucesiva
 en base 10 o base 16. El numero se descompone en digitos mediante modulo y
 division, y despues se imprime en el orden correcto mediante recursión.
 

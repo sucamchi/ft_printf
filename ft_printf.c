@@ -6,7 +6,7 @@
 /*   By: scamlett <scamlett@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/28 10:35:37 by scamlett          #+#    #+#             */
-/*   Updated: 2026/04/28 20:59:26 by scamlett         ###   ########.fr       */
+/*   Updated: 2026/04/29 11:07:22 by scamlett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,22 +35,22 @@ static void	select_type(char s, va_list args, int *printed)
 int	ft_printf(char const *fmt, ...)
 {
 	va_list	args;
-	int		cont;
+	int		i;
 	int		printed;
 
 	va_start(args, fmt);
-	cont = 0;
+	i = 0;
 	printed = 0;
-	while (fmt[cont])
+	while (fmt[i])
 	{
-		if (fmt[cont] == '%' && fmt[cont + 1] != '\0')
+		if (fmt[i] == '%' && fmt[i + 1] != '\0')
 		{
-			cont++;
-			select_type(fmt[cont], args, &printed);
+			i++;
+			select_type(fmt[i], args, &printed);
 		}
 		else
-			ft_putchar(fmt[cont], &printed);
-		cont++;
+			ft_putchar(fmt[i], &printed);
+		i++;
 	}
 	va_end(args);
 	return (printed);
