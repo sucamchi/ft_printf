@@ -32,6 +32,8 @@ int	main(void)
 	printf("Hello %s %d %x\n", "world", 42, 255);
 	ft_printf("Hello %c %i %X %%\n", 'n', 21, 255);
 	printf("Hello %c %i %X %%\n", 'n', 21, 255);
+	ft_printf("Hello %s\n", NULL);
+	printf("Hello %s\n", NULL);
 	return (0);
 }
 ```
