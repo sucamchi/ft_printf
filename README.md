@@ -52,7 +52,7 @@ cc *.c -o test && ./test
 - cppreference: https://en.cppreference.com/w/c/variadic
 
 Uso de IA:
-- Se ha utilizado IA para revisar explicaciones del README y asegurar que las
+- Se ha utilizado IA para formatear el README y asegurar que las
 	secciones cumplan los requisitos del enunciado. No se ha usado IA para
 	escribir o modificar el codigo fuente.
 
