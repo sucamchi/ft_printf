@@ -48,8 +48,8 @@ cc *.c -o test && ./test
 
 - Documentacion de `printf` (man pages): `man 3 printf`
 - Documentacion de `stdarg.h` (argumentos variables): `man 3 stdarg`
-- The C Programming Language (Kernighan & Ritchie), capitulo de funciones
-- cppreference: https://en.cppreference.com/w/c/variadic
+- The C Programming Language (Kernighan & Ritchie).
+- Funciones variádicas: https://en.cppreference.com/w/c/variadic
 
 Uso de IA:
 - Se ha utilizado IA para formatear el README y asegurar que las
@@ -67,10 +67,11 @@ Para convertir numeros a texto se usa un algoritmo de division sucesiva
 en base 10 o base 16. El numero se descompone en digitos mediante modulo y
 division, y despues se imprime en el orden correcto mediante recursión.
 
+Este algoritmo es adecuado porque es simple, fiable y cumple los requisitos de la evaluacion, evita estructuras complejas y mantiene el control total de la salida.
+
 ## Estructuras de datos
 
 - Cadenas C (`char *`) para el formato y para buffers temporales.
 - Un buffer local de tamano fijo para conversion hexadecimal.
 - `va_list` de `stdarg.h` para gestionar argumentos variables.
 
-Este algoritmo es adecuado porque es simple, fiable y cumple los requisitos de la evaluacion, evita estructuras complejas y mantiene el control total de la salida.
