@@ -6,7 +6,7 @@
 /*   By: scamlett <scamlett@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/28 10:37:12 by scamlett          #+#    #+#             */
-/*   Updated: 2026/04/29 16:11:18 by scamlett         ###   ########.fr       */
+/*   Updated: 2026/05/04 13:55:36 by scamlett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,9 @@ static void	hex_converter(char *buffer, unsigned long ptr)
 	int		i;
 
 	hex_digits = "0123456789abcdef";
-	i = 2;
 	buffer[0] = '0';
 	buffer[1] = 'x';
+	i = 2;
 	while (ptr > 0)
 	{
 		buffer[i++] = hex_digits[ptr % 16];
