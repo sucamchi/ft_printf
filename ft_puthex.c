@@ -6,58 +6,42 @@
 /*   By: scamlett <scamlett@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/28 10:36:45 by scamlett          #+#    #+#             */
-/*   Updated: 2026/04/29 15:13:47 by scamlett         ###   ########.fr       */
+/*   Updated: 2026/05/04 17:19:50 by scamlett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static void	invert_result(char *buffer, int index)
-{
-	int		start;
-	int		end;
-	char	tmp;
-
-	start = 0;
-	end = index - 1;
-	while (start < end)
-	{
-		tmp = buffer[start];
-		buffer[start] = buffer[end];
-		buffer[end] = tmp;
-		start++;
-		end--;
-	}
-}
-
-static void	hex_converter(char *buffer, unsigned int nb, char *hex_digits)
+static int	write_hex_back(char *buffer, unsigned int nb, char *hex_digits)
 {
 	int	i;
 
-	i = 0;
+	i = 15;
+	buffer[i] = '\0';
 	if (nb == 0)
-		buffer[i++] = '0';
+		buffer[--i] = '0';
 	while (nb > 0)
 	{
-		buffer[i++] = hex_digits[nb % 16];
+		buffer[--i] = hex_digits[nb % 16];
 		nb /= 16;
 	}
-	buffer[i] = '\0';
-	invert_result(buffer, i);
+	return (i);
 }
 
-void	ft_puthex(unsigned int nb, int *printed)
+void	ft_puthex(unsigned int nb, int *output)
 {
 	char	buffer[16];
+	int		start;
 
-	hex_converter(buffer, nb, "0123456789abcdef");
-	ft_putstr(buffer, printed);
+	start = write_hex_back(buffer, nb, "0123456789abcdef");
+	ft_putstr(buffer + start, output);
 }
 
-void	ft_putupphex(unsigned int nb, int *printed)
+void	ft_putupphex(unsigned int nb, int *output)
 {
 	char	buffer[16];
+	int		start;
 
-	hex_converter(buffer, nb, "0123456789ABCDEF");
-	ft_putstr(buffer, printed);
+	start = write_hex_back(buffer, nb, "0123456789ABCDEF");
+	ft_putstr(buffer + start, output);
 }

@@ -6,13 +6,13 @@
 /*   By: scamlett <scamlett@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/28 10:36:57 by scamlett          #+#    #+#             */
-/*   Updated: 2026/04/29 11:03:13 by scamlett         ###   ########.fr       */
+/*   Updated: 2026/05/04 17:19:50 by scamlett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putstr(char *str, int *printed)
+void	ft_putstr(char *str, int *output)
 {
 	unsigned int	i;
 
@@ -20,13 +20,13 @@ void	ft_putstr(char *str, int *printed)
 	if (str == NULL)
 	{
 		write(1, "(null)", 6);
-		*printed += 6;
+		*output += 6;
 		return ;
 	}
 	while (str[i] != '\0')
 	{
 		write(1, &str[i], 1);
 		i++;
-		(*printed)++;
+		(*output)++;
 	}
 }

@@ -6,13 +6,13 @@
 /*   By: scamlett <scamlett@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/28 10:36:51 by scamlett          #+#    #+#             */
-/*   Updated: 2026/04/28 20:28:36 by scamlett         ###   ########.fr       */
+/*   Updated: 2026/05/04 17:19:50 by scamlett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putnbr(int nb, int *printed)
+void	ft_putnbr(int nb, int *output)
 {
 	int		result;
 	long	lnb;
@@ -21,12 +21,12 @@ void	ft_putnbr(int nb, int *printed)
 	if (lnb < 0)
 	{
 		write(1, "-", 1);
-		*printed += 1;
+		*output += 1;
 		lnb = -lnb;
 	}
 	if (lnb >= 10)
-		ft_putnbr(lnb / 10, printed);
+		ft_putnbr(lnb / 10, output);
 	result = (lnb % 10) + '0';
 	write(1, &result, 1);
-	(*printed)++;
+	(*output)++;
 }

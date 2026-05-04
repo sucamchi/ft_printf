@@ -6,60 +6,45 @@
 /*   By: scamlett <scamlett@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/28 10:37:12 by scamlett          #+#    #+#             */
-/*   Updated: 2026/05/04 13:55:36 by scamlett         ###   ########.fr       */
+/*   Updated: 2026/05/04 17:19:50 by scamlett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static void	invert_result(char *buffer, int index)
-{
-	int		start;
-	int		end;
-	char	tmp;
-
-	start = 2;
-	end = index - 1;
-	while (start < end)
-	{
-		tmp = buffer[start];
-		buffer[start] = buffer[end];
-		buffer[end] = tmp;
-		start++;
-		end--;
-	}
-}
-
-static void	hex_converter(char *buffer, unsigned long ptr)
+static int	write_hex_back(char *buffer, unsigned long lnb)
 {
 	char	*hex_digits;
 	int		i;
 
 	hex_digits = "0123456789abcdef";
-	buffer[0] = '0';
-	buffer[1] = 'x';
-	i = 2;
-	while (ptr > 0)
-	{
-		buffer[i++] = hex_digits[ptr % 16];
-		ptr /= 16;
-	}
+	i = 18;
 	buffer[i] = '\0';
-	invert_result(buffer, i);
+	if (lnb == 0)
+		buffer[--i] = '0';
+	while (lnb > 0)
+	{
+		buffer[--i] = hex_digits[lnb % 16];
+		lnb /= 16;
+	}
+	buffer[--i] = 'x';
+	buffer[--i] = '0';
+	return (i);
 }
 
-void	ft_putvoid(void *ptr, int *printed)
+void	ft_putvoid(void *ptr, int *output)
 {
 	char	buffer[19];
+	int		start;
 
 	if (ptr == NULL)
 	{
 		write(1, "(nil)", 5);
-		*printed += 5;
+		*output += 5;
 	}
 	else
 	{
-		hex_converter(buffer, (unsigned long)ptr);
-		ft_putstr(buffer, printed);
+		start = write_hex_back(buffer, (unsigned long)ptr);
+		ft_putstr(buffer + start, output);
 	}
 }

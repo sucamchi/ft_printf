@@ -6,14 +6,14 @@
 /*   By: scamlett <scamlett@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/28 10:36:21 by scamlett          #+#    #+#             */
-/*   Updated: 2026/04/28 20:14:22 by scamlett         ###   ########.fr       */
+/*   Updated: 2026/05/04 17:19:50 by scamlett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putchar(char c, int *printed)
+void	ft_putchar(char c, int *output)
 {
 	write(1, &c, 1);
-	(*printed)++;
+	(*output)++;
 }
