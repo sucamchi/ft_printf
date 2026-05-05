@@ -28,12 +28,18 @@ make fclean
 
 int	main(void)
 {
-	ft_printf("Hello %s %d %x\n", "world", 42, 255);
-	printf("Hello %s %d %x\n", "world", 42, 255);
-	ft_printf("Hello %c %i %X %%\n", 'n', 21, 255);
-	printf("Hello %c %i %X %%\n", 'n', 21, 255);
-	ft_printf("Hello %s\n", NULL);
-	printf("Hello %s\n", NULL);
+	int num1;
+	int num2;
+
+	num1 = ft_printf("Hello %s %d %x\n", "world", 42, 255);
+	num2 = printf("Hello %s %d %x\n", "world", 42, 255);
+	printf("Mi printf: %d, printf: %d\n", num1, num2);
+	num1 = ft_printf(0);
+	num2 = printf(0);
+	printf("Mi printf: %d, printf: %d\n", num1, num2);
+	num1 = ft_printf("Hello %s\n", NULL);
+	num2 = printf("Hello %s\n", NULL);
+	printf("Mi printf: %d, printf: %d\n", num1, num2);
 	return (0);
 }
 ```
