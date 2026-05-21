@@ -65,10 +65,10 @@ Uso de IA:
 La implementacion se basa en un recorrido lineal de la cadena de formato `fmt`. Se
 procesa caracter a caracter y, cuando aparece un `%`, se interpreta el
 especificador siguiente y se delega la impresion a una funcion especializada.
-Este enfoque es rápido y sencillo.
 
 Para convertir numeros a texto se usa un algoritmo de division sucesiva
-en base 10 o base 16. El numero se descompone en digitos mediante modulo y
+en base 10 o base 16, según si el número es de base decimal o hexadecimal.
+El numero se descompone en dígitos mediante modulo y
 division, y despues se imprime en el orden correcto mediante recursión.
 
 Este algoritmo es adecuado porque es simple, fiable y cumple los requisitos de la evaluacion, evita estructuras complejas y mantiene el control total de la salida.
