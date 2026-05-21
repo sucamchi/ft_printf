@@ -6,7 +6,7 @@
 /*   By: scamlett <scamlett@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/28 10:35:37 by scamlett          #+#    #+#             */
-/*   Updated: 2026/05/05 19:32:10 by scamlett         ###   ########.fr       */
+/*   Updated: 2026/05/21 15:45:38 by scamlett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,11 +38,11 @@ int	ft_printf(char const *fmt, ...)
 	int		i;
 	int		output;
 
+	if (!fmt)
+		return (-1);
 	va_start(args, fmt);
 	i = 0;
 	output = 0;
-	if (!fmt)
-		return (-1);
 	while (fmt[i])
 	{
 		if (fmt[i] == '%' && fmt[i + 1] != '\0')
